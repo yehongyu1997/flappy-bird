@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #canvas{
+            border: 1px solid #ccc;
+            position: relative;
+            left: 50%;
+            margin-left: -300px;
+            top: 50px;
+           
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="800"> </canvas>
+    <!-- 引包接实例化 -->
+    <script src='js/Game.js'></script>
+    <script src='js/Bg.js'></script>
+    <script src='js/Land.js'></script>
+    <script src='js/Pipe.js'></script>
+    <script>
+      var game=  new Game();
+    </script>
+</body>
+</html>
