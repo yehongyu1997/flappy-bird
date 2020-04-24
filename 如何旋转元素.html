@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="480" height="640"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        // 信号量，当前已经旋转的角度
+        var r = 0;
+
+        setInterval(function () {
+            // 清屏
+            ctx.clearRect(0, 0, 600, 400);
+            // 信号量加0.1
+            r += 0.1;
+
+            // 保存世界当前的坐标轴的状态（位置、旋转），存档
+            ctx.save();
+            // 移动世界的坐标轴
+            ctx.translate(250, 250);
+            // 旋转整个世界
+            ctx.rotate(r);
+            // 但是我们在世界的原点画方形，即使是整个世界旋转
+            // 也感觉是它自己旋转
+            ctx.fillRect(-50, -50, 100, 100);
+            // 恢复世界，读档，把你移动的世界、旋转的世界恢复回去
+            ctx.restore();
+        }, 20);
+    </script>
+</body>
+
+</html>
